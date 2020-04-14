@@ -1,6 +1,6 @@
-# node-novation
+# node-launchkey
 
-Node.js interface for Novation MIDI controllers.
+Node.js interface for the Novation Launchkey Mini Mk2.
 
 ## Extras
 
