@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/njanssen/node-novation#readme",
   "dependencies": {
+    "@lachenmayer/midi-messages": "^1.0.1",
     "midi": "^1.0.0"
   }
 }
