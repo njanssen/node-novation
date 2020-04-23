@@ -1,7 +1,9 @@
 'use strict'
 
-const { Launchkey } = require('../lib')
-const controller = new Launchkey()
+const Novation = require('../lib')
+const controller = new Novation({
+	controller : Novation.controllers.launchkey_mini_mk2
+})
 
 controller.on('connected', () => {
 	console.log(`Novation ${controller.name} ${controller.version} controller ready`)

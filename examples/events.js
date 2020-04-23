@@ -1,7 +1,9 @@
 'use strict'
 
-const { Launchkey } = require('../lib')
-const controller = new Launchkey()
+const Novation = require('../lib')
+const controller = new Novation({
+	controller : Novation.controllers.lauchkey_mini_mk2
+})
 
 controller.on('connected', () => {
 	console.log(
@@ -12,15 +14,15 @@ controller.on('connected', () => {
 	controller.extendedMode()
 
 	controller.on('NoteOn', (message) => {
-		console.log(message)
+		console.log('NoteOn event:',message)
 	})
 
 	controller.on('NoteOff', (message) => {
-		console.log(message)
+		console.log('NoteOff event:',message)
 	})
 
 	controller.on('ControlChange', (message) => {
-		console.log(message)
+		console.log('CC event:',message)
 	})
 })
 

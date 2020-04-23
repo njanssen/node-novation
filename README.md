@@ -1,6 +1,6 @@
-# node-launchkey
+# node-novation
 
-Node.js interface for the Novation Launchkey Mini Mk2.
+Node.js interface for Novation Launchkey Mini Mk2 and Launchpad Mini Mk3
 
 ## Extras
 
