@@ -1,30 +1,31 @@
 {
-  "name": "@vliegwerk/novation",
-  "version": "1.0.0",
-  "description": "Node.js interface for Novation Launchkey Mini Mk2",
-  "main": "lib/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/njanssen/node-novation.git"
-  },
-  "keywords": [
-    "novation",
-    "controller",
-    "midi",
-    "launchkey",
-    "music"
-  ],
-  "author": "Niels Janssen",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/njanssen/node-novation/issues"
-  },
-  "homepage": "https://github.com/njanssen/node-novation#readme",
-  "dependencies": {
-    "@lachenmayer/midi-messages": "^1.0.1",
-    "midi": "^1.0.0"
-  }
+    "name": "@vliegwerk/novation",
+    "version": "1.0.0",
+    "description": "Node.js interface for Novation Launchkey and Launchpad controllers",
+    "main": "lib/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/njanssen/node-novation.git"
+    },
+    "keywords": [
+        "novation",
+        "controller",
+        "midi",
+        "launchkey",
+        "launchpad",
+        "music"
+    ],
+    "author": "Niels Janssen",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/njanssen/node-novation/issues"
+    },
+    "homepage": "https://github.com/njanssen/node-novation#readme",
+    "dependencies": {
+        "@lachenmayer/midi-messages": "^1.0.1",
+        "midi": "^1.0.0"
+    }
 }

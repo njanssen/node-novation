@@ -1,12 +1,13 @@
 'use strict'
 
-const Novation = require('../lib')
-const controller = new Novation({
-	controller : Novation.controllers.launchkey_mini_mk2
-})
+const { Launchkey } = require('../lib')
+
+const controller = new Launchkey()
 
 controller.on('connected', () => {
-	console.log(`Novation ${controller.name} ${controller.version} controller ready`)
+	console.log(
+		`Novation ${controller.name} controller ready`
+	)
 
 	controller.extendedMode()
 	controller.reset()
@@ -14,7 +15,7 @@ controller.on('connected', () => {
 	setInterval(() => {
 		for (let x = 0; x < 9; x++) {
 			for (let y = 0; y < 2; y++) {
-				controller.ledOn(x, y, Math.random(), Math.random())
+				controller.ledOn(x, y, Launchkey.color(Math.random()*4, Math.random()*4))
 			}
 		}
 	}, 350)

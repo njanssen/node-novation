@@ -1,17 +1,22 @@
 'use strict'
 
-const Novation = require('../lib')
-const controller = new Novation({
-	controller : Novation.controllers.lauchkey_mini_mk2
-})
+const { Launchkey } = require('../lib')
+
+const controller = new Launchkey()
 
 controller.on('connected', () => {
 	console.log(
-		`Novation ${controller.name} ${controller.version} controller ready`
+		`Novation ${controller.name} controller ready`
 	)
 
-	controller.reset()
+	// Enable extended (InControl) mode
 	controller.extendedMode()
+
+	// Reset all LEDs
+	controller.reset()
+
+	// Light up all LEDs with amber
+	// controller.ledOnAll(Launchkey.BRIGHTNESS.HIGH)
 
 	controller.on('NoteOn', (message) => {
 		console.log('NoteOn event:',message)
