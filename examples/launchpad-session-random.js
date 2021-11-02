@@ -1,29 +1,27 @@
-'use strict'
+"use strict";
 
-const { Launchpad } = require('../lib')
+const { Launchpad } = require("../lib");
 
-const controller = new Launchpad()
+const controller = new Launchpad();
 
-controller.on('connected', () => {
-	console.log(
-		`Novation ${controller.name} controller ready`
-	)
+controller.on("connected", () => {
+    console.log(`Novation ${controller.name} controller ready`);
 
-    controller.dawMode()
-	controller.layoutSession()
+    controller.dawMode();
+    controller.layoutSession();
 
-	setInterval(() => {
-		for (let x = 0; x < 9; x++) {
-			for (let y = 0; y < 9; y++) {
-				controller.ledOn(x, y, Math.random()*127)
-			}
-		}
-	}, 100)
-})
+    setInterval(() => {
+        for (let x = 0; x < 9; x++) {
+            for (let y = 0; y < 9; y++) {
+                controller.ledOn(x, y, Math.random() * 127);
+            }
+        }
+    }, 100);
+});
 
-controller.on('error', (err) => {
-	console.error('Error occured:', err)
-})
+controller.on("error", (err) => {
+    console.error("Error occured:", err);
+});
 
 // Connect to controller
-controller.connect()
+controller.connect();

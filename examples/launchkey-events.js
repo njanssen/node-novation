@@ -1,38 +1,36 @@
-'use strict'
+"use strict";
 
-const { Launchkey } = require('../lib')
+const { Launchkey } = require("../lib");
 
-const controller = new Launchkey()
+const controller = new Launchkey();
 
-controller.on('connected', () => {
-	console.log(
-		`Novation ${controller.name} controller ready`
-	)
+controller.on("connected", () => {
+    console.log(`Novation ${controller.name} controller ready`);
 
-	// Enable extended (InControl) mode
-	controller.extendedMode()
+    // Enable extended (InControl) mode
+    controller.extendedMode();
 
-	// Reset all LEDs
-	controller.reset()
+    // Reset all LEDs
+    controller.reset();
 
-	// Light up all LEDs with amber
-	// controller.ledOnAll(Launchkey.BRIGHTNESS.HIGH)
+    // Light up all LEDs with amber
+    // controller.ledOnAll(Launchkey.BRIGHTNESS.HIGH)
 
-	controller.on('NoteOn', (message) => {
-		console.log('NoteOn event:',message)
-	})
+    controller.on("NoteOn", (message) => {
+        console.log("NoteOn event:", message);
+    });
 
-	controller.on('NoteOff', (message) => {
-		console.log('NoteOff event:',message)
-	})
+    controller.on("NoteOff", (message) => {
+        console.log("NoteOff event:", message);
+    });
 
-	controller.on('ControlChange', (message) => {
-		console.log('CC event:',message)
-	})
-})
+    controller.on("ControlChange", (message) => {
+        console.log("CC event:", message);
+    });
+});
 
-controller.on('error', (err) => {
-	console.error('Error occured:', err)
-})
+controller.on("error", (err) => {
+    console.error("Error occured:", err);
+});
 
-controller.connect()
+controller.connect();
